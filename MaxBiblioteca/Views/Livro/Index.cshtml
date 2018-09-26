@@ -1,0 +1,29 @@
+﻿<h3 class="mt-3">Lista de Livros</h3>
+
+<table class="table table-hover mt-3">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Título</th>
+            <th>Autor</th>
+            <th>Editora</th>
+            <th>Quantidade</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var livro in ViewBag.Livros)
+        {
+            <tr>
+                <td>@livro.Id</td>
+                <td>@livro.Titulo</td>
+                <td>@livro.Autor</td>
+                <td>@livro.Editora</td>
+                <td>@livro.QuantidadeDeExemplares</td>
+                <td>
+                    @Html.RouteLink("Alterar", "AlterarLivro", new { id = livro.Id })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

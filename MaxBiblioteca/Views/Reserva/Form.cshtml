@@ -1,0 +1,26 @@
+﻿<form action="/Reserva/Adiciona" method="post">
+    @Html.AntiForgeryToken()
+    <h3 class="mt-3">Fazer Reserva</h3>
+    <label class="mt-3" for="titulo">Livro:</label>
+    <select id="livro" name="reserva.IdLivro" class="form-control">
+        @foreach (MaxBiblioteca.Models.Livro livro in ViewBag.Livros)
+        {
+            <option value="@livro.Id" selected="">@(livro.Titulo)</option>
+        }
+    </select>
+
+    <label class="mt-3" for="titulo">Usuário:</label>
+    <select id="usuario" name="reserva.IdUsuario" class="form-control">
+        @foreach (MaxBiblioteca.Models.Usuario usuario in ViewBag.Usuarios)
+        {
+            <option value="@usuario.Id" selected="">@(usuario.Nome)</option>
+        }
+    </select>
+
+    <label class="mt-3" for="dataReserva">Data da Reserva:</label>
+    <input name="reserva.DataReserva" type="date" value="@DateTime.Now.Date.ToString("yyyy-MM-dd")" id="dataReserva" class="form-control" />
+
+    <div class="row justify-content-center">
+        <input type="submit" value="Reservar" class="btn btn-primary mt-3 mr-auto ml-auto" />
+    </div>
+</form>

@@ -1,0 +1,27 @@
+﻿<h3 class="mt-3">Lista de Reservas</h3>
+
+<table class="table table-hover mt-3">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Usuário</th>
+            <th>Livro</th>
+            <th>Data</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (int i = 0; i < ViewBag.Reservas.Count; i++)
+        {
+            <tr>
+                <td>@ViewBag.Reservas[i].Id</td>
+                <td>@ViewBag.UsuariosQueReservaram[i].Nome</td>
+                <td>@ViewBag.LivrosReservados[i].Titulo</td>
+                <td>@ViewBag.Reservas[i].DataReserva.ToString("dd/MM/yyyy")</td>
+                <td>
+                    @Html.RouteLink("Alterar", "AlterarReserva", new { Id = ViewBag.Reservas[i].Id })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,15 @@
+﻿<form action="/Usuario/Atualiza" method="post">
+    <h3 class="mt-3">Alterar Usuário</h3>
+
+    <label class="mt-3" for="nome">Login:</label>
+    <input value="@ViewBag.Usuario.Nome" name="usuario.Nome" id="nome" class="form-control" />
+
+    <label class="mt-3" for="senha">Senha:</label>
+    <input value="@ViewBag.Usuario.Senha" name="usuario.Senha" type="password" id="senha" class="form-control" />
+
+    <input value="@ViewBag.Usuario.Id" name="usuario.Id" id="Id" class="d-none" />
+
+    <div class="row justify-content-center">
+        <input type="submit" value="Alterar" class="btn btn-primary mt-3 mr-auto ml-auto" />
+    </div>
+</form>

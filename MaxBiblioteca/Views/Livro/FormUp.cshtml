@@ -1,0 +1,21 @@
+﻿<form action="/Livro/Atualiza" method="post">
+    <h3 class="mt-3">Alterar Livro</h3>
+
+    <label class="mt-3" for="titulo">Título:</label>
+    <input value="@ViewBag.Livro.Titulo" name="livro.Titulo" id="titulo" class="form-control" />
+
+    <label class="mt-3" for="autor">Autor:</label>
+    <input value="@ViewBag.Livro.Autor" name="livro.Autor" id="autor" class="form-control" />
+
+    <label class="mt-3" for="editora">Editora:</label>
+    <input value="@ViewBag.Livro.Editora" name="livro.Editora" id="editora" class="form-control" />
+
+    <label class="mt-3" for="quantidadeDeExemplares">Quantidade de Exemplares:</label>
+    <input value="@ViewBag.Livro.QuantidadeDeExemplares" name="livro.QuantidadeDeExemplares" id="quantidadeDeExemplares" type="number" class="form-control" />
+
+    <input value="@ViewBag.Livro.Id" name="livro.Id" id="id" class="d-none" />
+
+    <div class="row justify-content-center">
+        <input type="submit" value="Alterar" class="btn btn-primary mt-3 mr-auto ml-auto" />
+    </div>
+</form>
